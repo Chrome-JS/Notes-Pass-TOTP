@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Manager Dashboard</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+
+<body class="dashboard-mode">
+
+  <h2 data-i18n="db_Hdr">AllRecords</h2>
+  
+  <div class="dashboard-layout">
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th data-i18n="dbCol_GUID">ID (GUID)</th>
+            <th data-i18n="card_LoginLBL">Login</th>
+            <th data-i18n="card_HostBL">Hosts</th>
+            <th data-i18n="card_NoteLBL">Note</th>
+          </tr>
+        </thead>
+
+        <tbody id="records-table-body">
+
+        </tbody>
+
+      </table>
+    </div>
+
+    <div class="form-container">
+      <div class="container" style="padding: 12px;">
+
+        <div id="totp-container" class="form-group hidden">
+          <label>TOTP Code</label>
+          <div class="totp-wrapper">
+            <input type="text" id="totp-field" readonly value="000 000">
+            <div class="progress-bar"><div id="progress-fill"></div></div>
+          </div>
+        </div>
+
+        <div class="form-group"><label for="login" data-i18n="card_LoginLBL">Login</label><input type="text" id="login"></div>
+        <div class="form-group"><label for="password" data-i18n="card_PwdLBL">Password</label><input type="password" id="password"></div>
+        <div class="form-group"><label for="secret"  data-i18n="card_SecrLBL">Secret (Base32 Key)</label><input type="text" id="secret"></div>
+        <div class="form-group"><label for="note" data-i18n="card_NoteLBL">Note</label><textarea id="note" rows="4"></textarea></div>
+        <div class="form-group"><label for="hosts" data-i18n="card_HostBL">Hosts</label><textarea id="hosts" rows="3"></textarea></div>
+
+        <div class="actions">
+          <button type="button" id="btn-delete" class="btn btn-danger hidden" data-i18n="btn_Del">Delete</button>
+          <button type="button" id="btn-apply" class="btn btn-primary" disabled data-i18n="btn_Apply">Apply</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+  <script src="localizer.js"></script>
+  <script type="module" src="dashboard.js"></script>
+  <script src="otpauth.umd.js"></script>
+
+</html>

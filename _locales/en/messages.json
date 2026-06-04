@@ -1,0 +1,41 @@
+{
+  "extTitle": { "message": "Notes, Pass & TOTPs" },
+  "extDescription": {"message": "Sync Notes, Passwords and TOTP." },
+  "extVersionLabel": {"message": "Version"},
+  "extCR_me1": {"message": "Copyright © 2026 SpyDex."},
+  "extCR_me2": {"message": "All Rights Reserved."},
+  "extCR_Lib_otpAuth": {"message": "Uses otpauth library (MIT License)."},
+
+
+  "db_Hdr": {"message": "All records" },
+  "dbCol_GUID": {"message": "GUID" },
+  "dbCol_Login": {"message": "Login" },
+  "dbCol_Host": {"message": "Hosts" },
+  "dbCol_Note": {"message": "Note" },
+
+
+  "card_LoginLBL": {"message": "Login" },
+  "card_LoginPH": { "message": "User name or EMail" },
+  "card_PwdLBL": {"message": "Password" },
+  "card_SecrLBL": {"message": "Secret (TOTP)" },
+  "card_SecrPH": {"message": "JBSW Y3DP EHPK 3PXP" },
+  "card_NoteLBL": {"message": "Note" },
+  "card_NotePH": {"message": "Note..." },
+  "card_HostBL": {"message": "Hosts" },
+  "card_urlRulesLBL": {"message": "URL rules" },
+
+
+  "btn_Del": {"message": "Delete" },
+  "btn_Apply": {"message": "Apply" },
+  "btn_Applied": {"message": "Applied" },
+  "btn_allNotes": {"message": "↗ List" },
+  "btn_Sync": {"message": "Save" },
+
+  "sts_newNote": {"message": "new note" },
+  "sts_savedNote": {"message": "saved" },
+  "sts_deletedNote": {"message": "deleted" },
+
+
+
+  "noname": {"message": "" }
+}

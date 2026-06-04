@@ -1,0 +1,41 @@
+{
+  "extTitle": { "message": "Notes, Pass & TOTPs" },
+  "extDescription": {"message": "Синхронизация Заметок, Паролей и TOTP." },
+  "extVersionLabel": {"message": "Версия"},
+  "extCR_me1": {"message": "Copyright © 2026 SpyDex."},
+  "extCR_me2": {"message": "Все права защищены."},
+  "extCR_Lib_otpAuth": {"message": "Использует библиотеку otpauth (лицензия MIT)."},
+
+
+
+  "db_Hdr": {"message": "Все записи" },
+  "dbCol_GUID": {"message": "GUID" },
+  "dbCol_Login": {"message": "Логин" },
+  "dbCol_Host": {"message": "Сайты" },
+  "dbCol_Note": {"message": "Заметка" },
+
+
+  "card_LoginLBL": {"message": "Логин" },
+  "card_LoginPH": { "message": "Имя пользователя / E-Mail" },
+  "card_PwdLBL": {"message": "Пароль" },
+  "card_SecrLBL": {"message": "Секрет (totp)" },
+  "card_SecrPH": {"message": "JBSW Y3DP EHPK 3PXP" },
+  "card_NoteLBL": {"message": "Заметка" },
+  "card_NotePH": {"message": "Заметка..." },
+  "card_HostBL": {"message": "Сайты" },
+  "card_urlRulesLBL": {"message": "Правила URL" },
+
+  "btn_Del": {"message": "Удалить" },
+  "btn_allNotes": {"message": "↗ Список" },
+  "btn_Apply": {"message": "Применить" },
+  "btn_Applied": {"message": "Применено" },
+  "btn_Sync": {"message": "Сохр." },
+
+  "sts_newNote": {"message": "новая заметка" },
+  "sts_savedNote": {"message": "сохранено" },
+  "sts_deletedNote": {"message": "удалено" },
+
+
+
+  "noname": {"message": "" }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+
+<body class="popup-mode"> 
+
+  <div class="container">
+    
+    <select id="record-selector" class="record-selector hidden"></select>
+
+    <div class="form-group">
+      <label for="login" data-i18n="card_LoginLBL">Login</label>
+      <input type="text" id="login" data-i18n-ph="card_LoginPH" />
+    </div>
+
+    <div class="form-group">
+      <label for="password" data-i18n="card_PwdLBL">Password</label>
+      <input type="password" id="password" data-i18n-ph="card_PwdLBL" />
+    </div>
+
+
+    <div class="form-group">
+      <label for="secret"  data-i18n="card_SecrLBL">Secret (Base32 Key)</label>
+      <input type="text" id="secret" data-i18n-ph="card_SecrPH">
+    </div>
+
+    <div id="totp-container" class="form-group hidden">
+      <label>TOTP Code</label>
+      <div class="totp-wrapper">
+        <input type="text" id="totp-field" readonly value="000 000">
+        <div class="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="note" data-i18n="card_NoteLBL">Note</label>
+      <textarea id="note" rows="2" data-i18n-ph="card_NotePH"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="hosts" data-i18n="card_HostBL">Hosts (one per line)</label>
+      <textarea id="hosts" rows="2" placeholder="example.com&#10;sub.domain.ru"></textarea>
+      
+      <label data-i18n="card_urlRulesLBL">URL Patterns (Optional):</label>
+      <textarea  id="urlPatterns" title="*/profile/Name
+/category/id/*
+&tag=name" ></textarea>
+    </div>
+
+  </div>
+
+    <div class="footer-actions">
+      <button id="open-dashboard"  class="btn btn-secondary" data-i18n="btn_allNotes" >All notes</button>
+      <div id="record-status" class="status-badge status-new" data-i18n="sts_NewNote" >New note</div><br/>
+
+      <button type="button" id="btn-sync" class="btn btn-secondary" data-i18n="btn_Sync">Sync</button>
+      <button type="button" id="btn-delete" class="btn btn-danger hidden" data-i18n="btn_Del">Delete</button>
+      <button type="button" id="btn-apply" class="btn btn-primary" disabled data-i18n="btn_Apply">Apply</button>
+  </div>
+
+
+</body>
+
+  <script type="module" src="localizer.js"></script>
+  <script src="otpauth.umd.js"></script>
+  <script type="module" src="popup.js"></script>
+
+</html>

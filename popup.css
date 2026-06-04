@@ -1,0 +1,257 @@
+/* =========================================
+   1. CSS Variables (Настройка внешнего вида)
+   ========================================= */
+:root {
+  --color-primary: #4CAF50;
+  --color-primary-hover: #45a049;
+  --color-danger: #d32f2f;
+  --color-danger-hover: #c62828;
+  --color-secondary: #e0e0e0;
+  --color-secondary-hover: #d5d5d5;
+  
+  --bg-body: #f9f9f9;
+  --bg-input: #fff;
+  --bg-totp: #e8f5e9;
+  
+  --text-main: #333;
+  --text-muted: #666;
+  
+  --border-color: #ccc;
+  --border-focus: var(--color-primary);
+  --radius: 4px;
+  
+  /* Размеры для Popup */
+  --popup-width: 480px;
+  --popup-height: 600px;
+}
+
+/* =========================================
+   2. Base & Layout
+   ========================================= */
+
+/* Сброс и базовый шрифт */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Специфичные стили ТОЛЬКО для Popup (окна расширения) */
+/* Добавь class="popup-mode" тегу <body> в popup.html */
+body.popup-mode {
+  width: var(--popup-width);
+  height: var(--popup-height);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Контейнер с полями (скроллится) */
+.container {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1 1 auto; /* Занимает всё место между хедером и футером */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =========================================
+   3. Forms & Inputs
+   ========================================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background-color: var(--bg-input);
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--border-focus);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Placeholder styling */
+::placeholder {
+  color: #aaa;
+  opacity: 1;
+}
+
+/* =========================================
+   4. TOTP Component
+   ========================================= */
+
+#totp-field {
+  font-family: monospace;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 3px;
+  color: #2e7d32;
+  background-color: var(--bg-totp);
+  border-color: #a5d6a7;
+  padding: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #e0e0e0;
+  margin-top: 6px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+#progress-fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  transition: width 1s linear;
+}
+
+/* =========================================
+   5. Buttons & Footer
+   ========================================= */
+
+/* Панель кнопок (прибита к низу) */
+.footer-actions {
+  padding: 12px 16px;
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0; /* Не сжимать футер */
+  gap: 8px;
+}
+
+.btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:disabled {
+  background-color: #e0e0e0 !important;
+  color: #999 !important;
+  cursor: not-allowed;
+}
+
+.btn-primary { background-color: var(--color-primary); color: white; }
+.btn-primary:hover:not(:disabled) { background-color: var(--color-primary-hover); }
+
+.btn-danger { background-color: var(--color-danger); color: white; }
+.btn-danger:hover:not(:disabled) { background-color: var(--color-danger-hover); }
+
+.btn-secondary { background-color: var(--bg-body); color: var(--text-main); border: 1px solid var(--border-color); }
+.btn-secondary:hover { background-color: #eee; }
+
+/* Статусы и вспомогательные классы */
+.hidden { display: none !important; }
+
+.status-badge {
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.status-new { background-color: #e3f2fd; color: #1565c0; }
+.status-exists { background-color: #fff3e0; color: #ef6c00; }
+
+/* Селектор записей */
+.record-selector {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+/* =========================================
+   6. Dashboard Specifics
+   ========================================= */
+
+/* В DashBoard.html body не имеет класса popup-mode, поэтому эти стили сработают */
+body.dashboard-mode {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #f0f2f5; /* Чуть темнее для разделения */
+  height: auto;
+  min-height: 100vh;
+  display: block; /* Обычный блок, не flex */
+}
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* Карточки для таблицы и формы */
+.table-container, .form-container {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.table-container { padding: 0; overflow: hidden; }
+.form-container { padding: 16px; position: sticky; top: 24px; }
+
+/* Таблица */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { 
+  text-align: left; padding: 10px 12px; background: #fafafa; 
+  color: var(--text-muted); font-weight: 600; font-size: 11px; 
+  border-bottom: 2px solid #eee; 
+}
+td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; }
+tr.clickable { cursor: pointer; }
+tr.clickable:hover { background-color: #f5f5f5; }
+tr.active-row { background-color: #e3f2fd !important; }
+
+.guid-cell { font-family: monospace; font-size: 10px; color: #999; }
+.hosts-badge { 
+  display: inline-block; background: #eee; padding: 2px 6px; 
+  border-radius: 3px; font-size: 11px; margin-right: 4px; margin-bottom: 2px;
+}

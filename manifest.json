@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+
+  "default_locale": "en",
+  "name": "__MSG_extTitle__",
+  "description": "__MSG_extDescription__",
+  "version":   "0.9.21",
+
+  "icons": {
+      "48": "icons/icon48.png"
+  },
+
+
+  "homepage_url": "https://github.com/Chrome-JS/Notes-Pass-TOTP",
+
+  "permissions": [
+    "storage",
+    "tabs",
+    "identity",
+    "contextMenus",
+    "scripting", "activeTab"  
+  ],
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+
+
+  "action": {
+    "default_popup": "popup.html",
+
+    "default_icon": {
+      "48": "icons/icon48.png"
+    }
+  },
+
+
+  "oauth2": {
+    "client_id": "606910454178-uhh453jpt5fljomjrhd1f0ages0r5lvj.apps.googleusercontent.com",
+                       
+    "scopes": [
+      "https://www.googleapis.com/auth/drive.file"
+    ]
+  }
+}
+
+
